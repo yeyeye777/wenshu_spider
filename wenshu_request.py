@@ -145,6 +145,10 @@ class wenshu():
                 res=json.loads(self.des.decrypt(text,key))
                 resultCount=res['queryResult']['resultCount']   #按当前条件筛选的文书有多少数量
                 docinfo_list =res['queryResult']['resultList']  #文书的docid列表
+                if len(docinfo_list)==0 and page==1:
+                    self.get_docid(queryCondition,page,pages)
+                if len(docinfo_list)==0 and page<50:
+                    self.get_docid(queryCondition, page, pages)
                 for doc in docinfo_list:
                     docid=doc['rowkey']
                     print(self.time_now_2(), docid)
