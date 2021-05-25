@@ -125,7 +125,7 @@ class wenshu():
             }
             try:
                 # 把请求的body进行加密处理
-                token=self.request_c("POST",url='http://106.15.249.243:8080/wenshu',headers={'Content-Type': 'text/plain'},payload=str(query),user_proxies=False)['data']['token']
+                token=self.request_c("POST",url='http://47.102.159.7:8080/wenshu',headers={'Content-Type': 'text/plain'},payload=str(query),user_proxies=False)['data']['token']
                 # 请求文书的app接口
                 url = "http://wenshuapp.court.gov.cn/appinterface/rest.q4w"
                 payload = {'request': token}
@@ -180,7 +180,7 @@ class wenshu():
             }
             # 把请求的body进行加密处理，
             try:
-                token = self.request_c("POST", url='http://106.15.249.243:8080/wenshu', headers={'Content-Type': 'text/plain'},payload=str(query))['data']['token']
+                token = self.request_c("POST", url='http://47.102.159.7:8080/wenshu', headers={'Content-Type': 'text/plain'},payload=str(query))['data']['token']
                 # 请求文书的app接口
                 url = "http://wenshuapp.court.gov.cn/appinterface/rest.q4w"
                 payload = {
